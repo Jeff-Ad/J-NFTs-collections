@@ -1,3 +1,0 @@
-{
-    "eslint.workingDirectories": ["./subfolder/app", "./subfolder/another-app"]
-  }
