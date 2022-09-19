@@ -345,7 +345,7 @@ export default function Home() {
           </div>
           <div className={styles.description}>{renderBody()}</div>
         </div>
-        <image className={styles.image} src="/0.svg" />
+        <img className={styles.image} src="/0.svg" />
       </div>
       <footer className={styles.footer}>Made with &#10084; by Jeff Kole</footer>
     </div>
