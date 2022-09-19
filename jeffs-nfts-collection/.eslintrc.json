@@ -1,7 +1,2 @@
 {
-  "extends": "next/core-web-vitals",
-  
-    "eslint.workingDirectories": ["./app", "./another-app"]
-  
-  
-}
+  "extends": "next/core-web-vitals"}
