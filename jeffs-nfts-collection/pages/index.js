@@ -3,27 +3,27 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Web3Modal from "web3modal";
 import { Contract, providers, utils } from "ethers";
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import { NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS } from "../constants";
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
-  const [walletConnected, setWalletConnected] = React.useState(false);
+  const [walletConnected, setWalletConnected] = useState(false);
 
   // presaleStarted keeps track of whether the presale has started or not
-  const [presaleStarted, setPresaleStarted] = React.useState(false);
+  const [presaleStarted, setPresaleStarted] = useState(false);
 
   // presaleEnded keeps track of whether the presale ended
-  const [presaleEnded, setPresaleEnded] = React.useState(false);
+  const [presaleEnded, setPresaleEnded] = useState(false);
   // checks if the currently connected MetaMask wallet is the owner of the contract
-  const [isOwner, setIsOwner] = React.useState(false);
+  const [isOwner, setIsOwner] = useState(false);
   // loading is set to true when we are waiting for a transaction to get mined
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
   // tokenIdsMinted keeps track of the number of tokenIds that have been minted
-  const [numTokenIdsMinted, setNumTokenIdsMinted] = React.useState("0");
+  const [numTokenIdsMinted, setNumTokenIdsMinted] = useState("0");
   //instantiating the web3modal
   // creating a reference to a web3 modal instance
   //function to connect to our wallet
-  const web3ModalRef = React.useRef();
+  const web3ModalRef = useRef();
 
   // a helper function to make sure the owner sees the button
   // to start the txn
@@ -250,7 +250,7 @@ export default function Home() {
       }
     }, 5 * 1000);
   };
-  React.useEffect(() => {
+  useEffect(() => {
     if (!walletConnected) {
       web3ModalRef.current = new Web3Modal({
         network: "rinkeby",
