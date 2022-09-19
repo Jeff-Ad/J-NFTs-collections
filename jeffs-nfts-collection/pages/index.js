@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Web3Modal from "web3modal";
-// import { Contract, providers, utils } from "ethers";
-import { providers, Contract, utils } from "ether";
+import { Contract, providers, utils } from "ethers";
 import React from "react";
 import { NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS } from "../constants";
 export default function Home() {
@@ -346,7 +345,7 @@ export default function Home() {
           </div>
           <div className={styles.description}>{renderBody()}</div>
         </div>
-        <img className={styles.image} src="/0.svg" />
+        <image className={styles.image} src="/0.svg" />
       </div>
       <footer className={styles.footer}>Made with &#10084; by Jeff Kole</footer>
     </div>
